@@ -2,23 +2,23 @@ from PIL import Image
 from pylab import *
 
 # read image to array
-im = array(Image.open('1.jpg'))
+im = array(Image.open('1.jpg').convert('L'))
 
+figure()
+gray()
 # plot the image
 imshow(im)
+title('original: "1.jpg"')
 
-# some points
-x = [50,100,100,50]
-y = [50,50,150,150]
+figure()
+gray()
+contour(im, origin='image')
+axis('equal')
+axis('off')
 
-# plot the points with red star-markers
-plot(x,y,'r*')
+figure()
+hist(im.flatten(), 128)
 
-# line plot connecting the first two points
-plot(x[:],y[:])
-
-# add title and show the plot
-title('Plotting: "1.jpg"')
 
 show()
 
