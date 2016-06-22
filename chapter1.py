@@ -7,10 +7,11 @@ im = array(Image.open('1.jpg').convert('L'))
 figure()
 gray()
 # plot the image
-imshow(im)
+imshow(im[60:100,:])
 print 'Please click 3 points'
 x = ginput(3)
 print 'you clicked:',x
+print im.shape, im.dtype
 title('original: "1.jpg"')
 
 figure()
