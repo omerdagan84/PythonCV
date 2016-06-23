@@ -1,8 +1,20 @@
 from PIL import Image
 from pylab import *
+from imtools import *
 
 # read image to array
 im = array(Image.open('1.jpg').convert('L'))
+
+
+figure()
+gray()
+imshow(im)
+
+figure()
+gray()
+im = array(Image.open('1.jpg').convert('L'))
+im2,cdf = histeq(im)
+imshow(im2)
 
 figure()
 gray()
